@@ -1,0 +1,63 @@
+# mcp-dump
+
+`mcp-dump` inspects any stdio MCP server command and prints initialize/capability data.
+
+## Installation
+
+Global install (distributed via npm):
+
+```bash
+npm install -g @normahq/mcp-dump@latest
+```
+
+One-off run with npx (no global install):
+
+```bash
+npx @normahq/mcp-dump@latest -- <mcp-server-cmd> [args...]
+```
+
+## Run
+
+```bash
+mcp-dump -- <mcp-server-cmd> [args...]
+```
+
+Examples:
+
+```bash
+mcp-dump -- codex mcp-server
+mcp-dump --json -- codex mcp-server
+```
+
+## Flags
+
+- `--json`: print machine-readable JSON output.
+- `--debug`: enable debug logs for the inspector.
+
+## Output
+
+Human-readable output includes:
+
+- server name/version
+- protocol version
+- server capabilities
+- tools list (with input params and response schemas)
+- prompts/resources/resource templates status
+
+## Notes
+
+- `--` is required. Arguments before `--` are rejected.
+- By default, command output is result-focused (no inspector debug/info logs).
+
+## Repository
+
+- GitHub: <https://github.com/normahq/mcp-dump>
+
+## Contact
+
+- Issues: <https://github.com/normahq/mcp-dump/issues>
+- Maintainer: [@metalagman](https://github.com/metalagman)
+
+## License
+
+MIT. See the repository [LICENSE](https://github.com/normahq/mcp-dump/blob/main/LICENSE).
